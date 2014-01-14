@@ -9,9 +9,7 @@
 #include <iostream>
 using namespace std;
 
-//#include <TreeList.h>
-
-#include "../../TDacCore/include/TreeList.h"
+#include <TreeList.h>
 
 int main() {
 	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
@@ -26,15 +24,15 @@ int main() {
 	TreeList sub1_1;
 	TreeList sub1_2;
 
-	sub0.AddChild(sub0_0);
-	sub0.AddChild(sub0_1);
+	sub0.AddChild(&sub0_0);
+	sub0.AddChild(&sub0_1);
 
-	sub1.AddChild(sub1_0);
-	sub1.AddChild(sub1_1);
-	sub1.AddChild(sub1_2);
+	sub1.AddChild(&sub1_0);
+	sub1.AddChild(&sub1_1);
+	sub1.AddChild(&sub1_2);
 
-	root.AddChild(sub0);
-	root.AddChild(sub1);
+	root.AddChild(&sub0);
+	root.AddChild(&sub1);
 
 	root.DumpPrint();
 
